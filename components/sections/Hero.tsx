@@ -13,7 +13,7 @@ export default function Hero() {
         <p className="text-zinc-400 text-lg mb-10">
           AI automation for consultants, founders and small businesses.
         </p>
-        <Button href="https://cal.com/flowkrafts">Book a Free Call</Button>
+        <Button href="https://cal.com/emil-abdurahmanli">Book a Free Call</Button>
       </div>
     </section>
   )

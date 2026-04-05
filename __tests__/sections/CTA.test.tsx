@@ -17,6 +17,6 @@ describe('CTA', () => {
   it('renders a CTA link to cal.com', () => {
     render(<CTA />)
     const link = screen.getByRole('link', { name: /book a free call/i })
-    expect(link).toHaveAttribute('href', 'https://cal.com/flowkrafts')
+    expect(link).toHaveAttribute('href', 'https://cal.com/emil-abdurahmanli')
   })
 })

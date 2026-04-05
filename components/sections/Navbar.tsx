@@ -16,7 +16,7 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:block">
-          <Button href="https://cal.com/flowkrafts">Book a Free Call</Button>
+          <Button href="https://cal.com/emil-abdurahmanli">Book a Free Call</Button>
         </div>
 
         <button
@@ -33,7 +33,7 @@ export default function Navbar() {
           data-testid="mobile-menu"
           className="md:hidden px-6 pb-4 bg-[#0a0a0a]/95 border-t border-white/[0.06]"
         >
-          <Button href="https://cal.com/flowkrafts">Book a Free Call</Button>
+          <Button href="https://cal.com/emil-abdurahmanli">Book a Free Call</Button>
         </div>
       )}
     </nav>

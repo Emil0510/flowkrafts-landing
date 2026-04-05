@@ -12,7 +12,7 @@ describe('Navbar', () => {
     render(<Navbar />)
     const links = screen.getAllByRole('link', { name: /book a free call/i })
     expect(links.length).toBeGreaterThan(0)
-    expect(links[0]).toHaveAttribute('href', 'https://cal.com/flowkrafts')
+    expect(links[0]).toHaveAttribute('href', 'https://cal.com/emil-abdurahmanli')
   })
 
   it('toggles mobile menu on hamburger click', () => {

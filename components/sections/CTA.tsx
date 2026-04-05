@@ -8,7 +8,7 @@ export default function CTA() {
         <p className="text-zinc-400 mb-10">
           Let&apos;s find the highest-leverage system for your business.
         </p>
-        <Button href="https://cal.com/flowkrafts">Book a Free Call</Button>
+        <Button href="https://cal.com/emil-abdurahmanli">Book a Free Call</Button>
       </div>
     </section>
   )
