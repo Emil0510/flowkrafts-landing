@@ -7,13 +7,12 @@ describe('Services', () => {
     expect(screen.getByText('Our Services')).toBeInTheDocument()
   })
 
-  it('renders all 6 service cards', () => {
+  it('renders core service blocks from the template', () => {
     render(<Services />)
-    expect(screen.getByText('CRM System')).toBeInTheDocument()
-    expect(screen.getByText('Order System')).toBeInTheDocument()
-    expect(screen.getByText('Marketing Automation')).toBeInTheDocument()
-    expect(screen.getByText('Visual & Video Production (AI-Automated)')).toBeInTheDocument()
-    expect(screen.getByText('Text-Based Bot (GPT + RAG)')).toBeInTheDocument()
-    expect(screen.getByText('Training & Onboarding System')).toBeInTheDocument()
+    expect(screen.getByText('Workflow Automation')).toBeInTheDocument()
+    expect(screen.getAllByText('Customer Support').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('Sales / CRM Automations').length).toBeGreaterThan(0)
+    expect(screen.getByRole('heading', { name: /content creation/i })).toBeInTheDocument()
+    expect(screen.getByText('All Tasks')).toBeInTheDocument()
   })
 })

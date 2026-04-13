@@ -1,17 +1,22 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Figtree } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const figtree = Figtree({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://flowkrafts.com'),
-  title: 'FlowKrafts — We build systems that work while you sleep',
+  title: 'FlowKrafts — Intelligent Automation for Modern Businesses',
   description:
-    'AI automation agency. We build, test and hand over working systems for consultants, founders and small businesses.',
+    'FlowKrafts brings AI automation to your fingertips and streamlines work. AI solutions that take your business to the next level.',
   openGraph: {
-    title: 'FlowKrafts — We build systems that work while you sleep',
-    description: 'AI automation agency. We build, test and hand over working systems.',
+    title: 'FlowKrafts — Intelligent Automation for Modern Businesses',
+    description:
+      'AI automation, workflow automation, AI assistants, and custom AI projects for modern businesses.',
     url: 'https://flowkrafts.com',
     siteName: 'FlowKrafts',
     type: 'website',
@@ -19,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'FlowKrafts',
-    description: 'AI automation agency. We build systems that work while you sleep.',
+    description: 'Intelligent automation for modern businesses.',
   },
   alternates: {
     canonical: 'https://flowkrafts.com',
@@ -28,8 +33,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${figtree.className} antialiased`}
+        suppressHydrationWarning
+      >
+        {children}
+      </body>
     </html>
   )
 }

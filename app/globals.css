@@ -1,7 +1,20 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens from Framer project (via MCP getProjectXml / getNodeXml).
+ * ColorStyles + TextStyles paths preserved as CSS variables.
+ */
 @theme {
-  --color-brand-blue: #3b82f6;
+  --color-framer-bg: rgb(0, 0, 0);
+  --color-framer-purple: rgb(129, 74, 200);
+  --color-framer-pink: rgb(223, 122, 254);
+  --color-framer-card: rgba(13, 13, 13, 0.8);
+  --color-framer-primary-text: rgb(255, 255, 255);
+  --color-framer-light-shade: rgba(255, 255, 255, 0.05);
+  --color-framer-secondary-text: rgb(204, 204, 204);
+  --color-framer-border: rgb(34, 34, 34);
+  --color-framer-small-text: rgba(255, 255, 255, 0.9);
+  --color-framer-secondary-text-2: rgba(255, 255, 255, 0.75);
 }
 
 html {
@@ -9,6 +22,252 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #ffffff;
+  background-color: var(--color-framer-bg);
+  color: var(--color-framer-primary-text);
+}
+
+/* /Heading 1 — Figtree 600 70px lh 1.1 ls -2.2px */
+.xtract-h1 {
+  font-weight: 600;
+  font-size: clamp(2.25rem, 5vw + 1rem, 4.375rem);
+  line-height: 1.1;
+  letter-spacing: -0.03125em;
+  text-wrap: balance;
+}
+
+@media (min-width: 1024px) {
+  .xtract-h1 {
+    letter-spacing: -2.2px;
+    font-size: 70px;
+  }
+}
+
+/* /Heading 2 — 50px */
+.xtract-h2 {
+  font-weight: 500;
+  font-size: clamp(1.875rem, 3vw + 1rem, 3.125rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+/* /Heading 3 — 35px */
+.xtract-h3 {
+  font-weight: 500;
+  font-size: clamp(1.375rem, 2vw + 0.75rem, 2.1875rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+/* /Body XXL — 18px / 1.5 */
+.xtract-body-xxl {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: var(--color-framer-secondary-text-2);
+}
+
+/* /Body L — 14px */
+.xtract-body-l {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-framer-secondary-text);
+}
+
+/* /Card title — 23px */
+.xtract-card-title {
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* /Card content — 16px / 1.4 */
+.xtract-card-content {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--color-framer-secondary-text-2);
+}
+
+/* Section rhythm from page XML: padding 100px 40px */
+.xtract-section {
+  padding: 100px 40px;
+}
+
+/* Framer “Badge” chip — rgba(13,13,13,0.8) + border */
+.xtract-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 9999px;
+  background: var(--color-framer-card);
+  border: 1px solid var(--color-framer-border);
+  padding: 0.35rem 0.85rem;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.04em;
+  line-height: 1em;
+  color: var(--color-framer-small-text);
+}
+
+/* Logo ticker (Framer Ticker placeholder) */
+@keyframes xtract-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.xtract-marquee-track {
+  display: flex;
+  gap: 74px;
+  width: max-content;
+  animation: xtract-marquee 25s linear infinite;
+}
+
+.xtract-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Page load: navbar pieces settle into place */
+@keyframes xtract-nav-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.xtract-nav-enter {
+  opacity: 0;
+  animation: xtract-nav-enter 0.78s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.xtract-nav-enter-1 {
+  animation-delay: 0.05s;
+}
+.xtract-nav-enter-2 {
+  animation-delay: 0.13s;
+}
+.xtract-nav-enter-3 {
+  animation-delay: 0.2s;
+}
+
+/* Framer-style motion: hero stagger — blocks ease up into final layout */
+@keyframes xtract-hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.xtract-hero-entrance {
+  opacity: 0;
+  animation: xtract-hero-in 0.92s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.xtract-hero-entrance--1 {
+  animation-delay: 0.08s;
+}
+.xtract-hero-entrance--2 {
+  animation-delay: 0.2s;
+}
+.xtract-hero-entrance--3 {
+  animation-delay: 0.32s;
+}
+.xtract-hero-entrance--4 {
+  animation-delay: 0.44s;
+}
+
+/* Soft drift on hero glow orbs (Framer-like ambient motion) */
+@keyframes xtract-float-orb {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.xtract-float-slow {
+  animation: xtract-float-orb 14s ease-in-out infinite;
+}
+
+/* Scroll reveal (used with components/ui/Reveal.tsx) */
+.xtract-reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.82s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.82s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.xtract-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Interactive polish */
+.xtract-lift-hover {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.xtract-lift-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -24px rgba(129, 74, 200, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .xtract-nav-enter {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .xtract-hero-entrance {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .xtract-float-slow {
+    animation: none !important;
+  }
+
+  .xtract-marquee-track {
+    animation: none !important;
+  }
+
+  .xtract-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .xtract-lift-hover:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }

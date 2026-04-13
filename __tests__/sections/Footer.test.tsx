@@ -4,23 +4,21 @@ import Footer from '@/components/sections/Footer'
 describe('Footer', () => {
   it('renders the logo', () => {
     render(<Footer />)
-    expect(screen.getByText('Flow')).toBeInTheDocument()
-    expect(screen.getByText('Krafts')).toBeInTheDocument()
+    expect(screen.getAllByText('FlowKrafts').length).toBeGreaterThan(0)
   })
 
   it('renders the tagline', () => {
     render(<Footer />)
-    expect(screen.getByText(/we build systems that work while you sleep/i)).toBeInTheDocument()
+    expect(screen.getByText(/automate smarter, optimize faster/i)).toBeInTheDocument()
   })
 
-  it('renders the email as a mailto link', () => {
+  it('renders newsletter signup', () => {
     render(<Footer />)
-    const link = screen.getByRole('link', { name: /info@flowkrafts.com/i })
-    expect(link).toHaveAttribute('href', 'mailto:info@flowkrafts.com')
+    expect(screen.getByLabelText(/email for newsletter/i)).toBeInTheDocument()
   })
 
-  it('renders the copyright notice', () => {
+  it('renders copyright', () => {
     render(<Footer />)
-    expect(screen.getByText(/© 2026 FlowKrafts/i)).toBeInTheDocument()
+    expect(screen.getByText(/© all right reserved/i)).toBeInTheDocument()
   })
 })
