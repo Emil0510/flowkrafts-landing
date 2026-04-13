@@ -3,7 +3,7 @@ import HeroSkyBackground from '@/components/sections/HeroSkyBackground'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[78vh] overflow-hidden bg-[rgb(0,0,0)] scroll-mt-0 md:min-h-[76vh]">
+    <section className="relative min-h-[64vh] overflow-hidden bg-[rgb(0,0,0)] scroll-mt-0 sm:min-h-[70vh] md:min-h-[62vh]">
       <div
         className="pointer-events-none absolute inset-0 z-0"
         aria-hidden
@@ -30,7 +30,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-[3] mx-auto flex max-w-[1200px] flex-col items-center gap-[25px] px-10 pb-[28px] pt-[140px] text-center md:pb-[18px] md:pt-[124px]">
+      <div className="relative z-[3] mx-auto flex max-w-[1200px] flex-col items-center gap-[22px] px-10 pb-[18px] pt-[110px] text-center sm:pb-[22px] sm:pt-[120px] md:pb-[6px] md:pt-[86px]">
         <span className="xtract-hero-entrance xtract-hero-entrance--1 xtract-badge text-[rgb(255,255,255)]">
           New
         </span>

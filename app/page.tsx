@@ -1,6 +1,5 @@
 import Navbar from '@/components/sections/Navbar'
 import Hero from '@/components/sections/Hero'
-import LogoStrip from '@/components/sections/LogoStrip'
 import Services from '@/components/sections/Services'
 import IntegrationTimeline from '@/components/sections/IntegrationTimeline'
 import CaseStudies from '@/components/sections/CaseStudies'
@@ -17,9 +16,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Reveal delayMs={0}>
+        {/* <Reveal delayMs={0}>
           <LogoStrip />
-        </Reveal>
+        </Reveal> */}
         <Reveal delayMs={55}>
           <Services />
         </Reveal>

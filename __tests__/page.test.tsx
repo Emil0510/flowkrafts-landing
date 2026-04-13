@@ -7,7 +7,6 @@ describe('Home page', () => {
     expect(
       screen.getByRole('heading', { name: /intelligent automation for modern businesses/i }),
     ).toBeInTheDocument()
-    expect(screen.getByText(/over 50\+ business trust us/i)).toBeInTheDocument()
     expect(screen.getByText('Our Services')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /integration timeline/i })).toBeInTheDocument()
     expect(screen.getByText('Case Studies')).toBeInTheDocument()
