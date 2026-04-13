@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   title: 'FlowKrafts — Intelligent Automation for Modern Businesses',
   description:
     'FlowKrafts brings AI automation to your fingertips and streamlines work. AI solutions that take your business to the next level.',
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     title: 'FlowKrafts — Intelligent Automation for Modern Businesses',
     description:

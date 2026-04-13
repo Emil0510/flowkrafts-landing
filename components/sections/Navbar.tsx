@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import Button from '@/components/ui/Button'
 import { CAL_BOOKING_URL } from '@/lib/cal-booking'
@@ -25,9 +26,20 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-10">
         <Link
           href="/"
-          className="xtract-nav-enter xtract-nav-enter-1 text-lg font-bold tracking-tight shrink-0"
+          aria-label="FlowKrafts"
+          className="xtract-nav-enter xtract-nav-enter-1 flex items-center gap-3 text-lg font-bold tracking-tight shrink-0"
         >
-          <span className="text-white">FlowKrafts</span>
+          <Image
+            src="/flowkrafts-logo.png"
+            alt="FlowKrafts logo"
+            width={28}
+            height={28}
+            priority
+            className="h-7 w-7"
+          />
+          <span className="text-white">
+            Flow<span className="text-[rgb(129,74,200)]">Krafts</span>
+          </span>
         </Link>
 
         <div className="xtract-nav-enter xtract-nav-enter-2 hidden lg:flex items-center gap-5 text-sm text-zinc-400 flex-wrap justify-end">

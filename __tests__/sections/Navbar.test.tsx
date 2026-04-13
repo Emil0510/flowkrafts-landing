@@ -5,7 +5,8 @@ import { CAL_BOOKING_URL } from '@/lib/cal-booking'
 describe('Navbar', () => {
   it('renders the FlowKrafts logo text', () => {
     render(<Navbar />)
-    expect(screen.getAllByText('FlowKrafts').length).toBeGreaterThan(0)
+    expect(screen.getByAltText(/flowkrafts logo/i)).toBeInTheDocument()
+    expect(screen.getByLabelText('FlowKrafts')).toBeInTheDocument()
   })
 
   it('renders Book a call links to the project Cal.com URL', () => {
